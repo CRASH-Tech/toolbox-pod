@@ -9,9 +9,6 @@ spec:
   #   kubernetes.io/hostname: k-dev-a-w2
   # hostNetwork: true
   priorityClassName: system-cluster-critical
-  securityContext:
-    runAsUser: 0
-    runAsGroup: 0
   tolerations:
     - operator: Exists
       effect: NoSchedule
@@ -52,6 +49,10 @@ spec:
       image: crashntech/toolbox-pod:1.0.4
       imagePullPolicy: IfNotPresent
       command: ["sleep", "infinity"]
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+        privileged: true
       # volumeMounts:
       #   - name: data
       #     mountPath: /data
