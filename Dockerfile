@@ -28,6 +28,10 @@ RUN apt -y install postgresql-client
 RUN apt -y install lvm2
 RUN apt -y install fdisk
 
+RUN apt -y install iotop
+RUN apt -y install mtr
+RUN apt -y install net-tools
+
 RUN curl https://dl.min.io/client/mc/release/linux-amd64/mc \
     --create-dirs -o /usr/local/bin/minio-mc
 RUN chmod a+x /usr/local/bin/minio-mc
